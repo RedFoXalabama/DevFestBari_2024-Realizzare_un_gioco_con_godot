@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs06cixbis00w"]
+
+[ext_resource type="PackedScene" uid="uid://ctlcwucy2xg43" path="res://CSGPrototype/Fox.tscn" id="1_pmyef"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_ot2pg"]
+
+[node name="CSG_3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69808, 0, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00214839, 0, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79344, 0, 0)
+mesh = SubResource("TorusMesh_ot2pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Fox_animated" parent="." instance=ExtResource("1_pmyef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28045, 0, 0)
