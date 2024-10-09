@@ -7,29 +7,24 @@ public partial class TextureButton : Godot.TextureButton
 	private const string LevelScenePath = "res://Level.tscn";
 
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
+	public override void _Ready() {
 		Connect("pressed", new Callable(this, nameof(OnButtonDown)));
 	}
 
 	// Function to handle the button press
-	private void OnButtonDown()
-	{
+	private void OnButtonDown() {
 		GoToLevel();
 	}
 
 	// Function to change the scene to Level.tscn
-	private void GoToLevel()
-	{
+	private void GoToLevel() {
 		// Load the scene
 		PackedScene levelScene = (PackedScene)GD.Load("res://Level/Level.tscn");
-		if (levelScene != null)
-		{
+		if (levelScene != null) {
 			// Get the SceneTree and change the scene
 			GetTree().ChangeSceneToPacked(levelScene);
 		}
-		else
-		{
+		else {
 			GD.PrintErr("Failed to load scene: " + "res://Level/Level.tscn");
 		}
 	}
