@@ -18,17 +18,18 @@ grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -21.0
-offset_right = 40.0
-offset_bottom = 21.0
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.532
+anchor_right = 0.535
+anchor_bottom = 0.532
+offset_left = -80.32
+offset_top = 64.264
+offset_right = -0.320007
+offset_bottom = 106.264
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 texture_normal = ExtResource("1_igdxq")
 texture_hover = ExtResource("2_6my3a")
 script = ExtResource("3_j6ari")
