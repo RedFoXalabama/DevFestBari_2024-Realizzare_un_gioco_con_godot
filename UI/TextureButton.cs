@@ -3,16 +3,16 @@ using System;
 
 public partial class TextureButton : Godot.TextureButton
 {
-	// Path to your Level scene
+	// Path della scena Level
 	private const string LevelScenePath = "res://Level.tscn";
 
-	// Called when the node enters the scene tree for the first time.
+	// Chiamato quando il nodo entra nella scena per la prima volta
 	public override void _Ready() {
-		Connect("pressed", new Callable(this, nameof(OnButtonDown)));
+		Connect("pressed", new Callable(this, nameof(_on_button_down)));
 	}
 
-	// Function to handle the button press
-	private void OnButtonDown() {
+	// Funzione per il tasto premuto
+	private void _on_button_down() {
 		GoToLevel();
 	}
 
