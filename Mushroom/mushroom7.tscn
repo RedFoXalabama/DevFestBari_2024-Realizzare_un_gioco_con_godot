@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxti7vcd40b42"]
+
+[ext_resource type="PackedScene" uid="uid://i7ulc4rphu8k" path="res://Mushroom/Mushroom.tscn" id="1_kx7ua"]
+[ext_resource type="PackedScene" uid="uid://cmwlnumd3twg7" path="res://Mushroom/Mushroom007.fbx" id="2_c57uc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m7fl4"]
+
+[node name="Mushroom7" instance=ExtResource("1_kx7ua")]
+
+[node name="Area3D" parent="." index="0"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.542991, 0)
+shape = SubResource("BoxShape3D_m7fl4")
+
+[node name="Mushroom007" parent="." index="1" instance=ExtResource("2_c57uc")]
