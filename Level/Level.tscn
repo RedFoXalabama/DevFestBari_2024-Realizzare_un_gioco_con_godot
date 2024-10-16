@@ -159,4 +159,3 @@ use_collision = true
 size = Vector3(5.40918, 8.44543, 5.07178)
 
 [connection signal="UpdateHUD" from="." to="HUD" method="_on_level_update_hud"]
-[connection signal="WinHUD" from="." to="HUD" method="_on_win_hud"]
