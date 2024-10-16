@@ -7,8 +7,9 @@ public partial class Mushroom : Node3D{
 	
 	public void _on_area_3d_body_entered(Node body){
 		if(body.IsInGroup("Player")){
-			EmitSignal(nameof(MushroomCollectedEventHandler));
+			EmitSignal(nameof(MushroomCollected));
 			QueueFree();
 		}
+		GD.Print(body);
 	}
 }

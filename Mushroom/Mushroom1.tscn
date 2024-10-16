@@ -11,6 +11,10 @@ data = PackedVector3Array(-0.3294, 1.1431, -0.1105, -0.1821, 1.0321, -0.1036, -0
 
 [node name="Mushroom" instance=ExtResource("1_ukdy4")]
 
+[node name="Area3D" parent="." index="0"]
+collision_layer = 4
+collision_mask = 2
+
 [node name="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("BoxShape3D_8w00x")

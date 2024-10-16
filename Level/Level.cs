@@ -4,6 +4,7 @@ using System;
 public partial class Level : Node3D {
 
 	[Signal] public delegate void UpdateHUDEventHandler();
+	[Signal] public delegate void WinHUDEventHandler();
 
 	private Node mushroomContainer;
 
@@ -15,8 +16,14 @@ public partial class Level : Node3D {
 		}
 	}
 
-	public void Addpoint() {
-		EmitSignal(nameof(UpdateHUDEventHandler));
+    public override void _Process(double delta) {
+        if (mushroomContainer.GetChildCount() == 0) {
+			EmitSignal(nameof(WinHUD));
+		}
+    }
+
+    public void Addpoint() {
+		EmitSignal(nameof(UpdateHUD));
 	}
 
 }

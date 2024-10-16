@@ -104,6 +104,7 @@ shadow_enabled = true
 environment = SubResource("Environment_jugnk")
 
 [node name="HUD" parent="." instance=ExtResource("1_speo8")]
+process_mode = 3
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_un2ic")
@@ -144,13 +145,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9524, 0.5, -8.35957)
 [node name="Rock_1" parent="Rocce" instance=ExtResource("8_2mjld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11839, 0)
 
+[node name="Player" parent="." instance=ExtResource("9_fempd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19504, 4.99143)
+
 [node name="MushroomContainer" type="Node" parent="."]
 
-[node name="Mushroom" parent="MushroomContainer" instance=ExtResource("9_u47no")]
+[node name="Mushroom" parent="MushroomContainer" groups=["Mushroom"] instance=ExtResource("9_u47no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52507, 1, 12)
-
-[node name="Player" parent="." instance=ExtResource("9_fempd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8.41666)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20459, 4.73864, -8.34364)
@@ -158,3 +159,4 @@ use_collision = true
 size = Vector3(5.40918, 8.44543, 5.07178)
 
 [connection signal="UpdateHUD" from="." to="HUD" method="_on_level_update_hud"]
+[connection signal="WinHUD" from="." to="HUD" method="_on_win_hud"]
