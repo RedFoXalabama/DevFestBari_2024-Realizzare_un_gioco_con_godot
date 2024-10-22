@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://blwc8jbdpr5ef"]
+
+[ext_resource type="FontFile" uid="uid://bffaack6ftq4l" path="res://Gioco Finito/UI/Rubik-Regular.ttf" id="1_51oli"]
+
+[resource]
+Label/colors/font_color = Color(0.913725, 0.921569, 0.121569, 1)
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_51oli")

@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr2ndmjyfg4qe"]
+
+[ext_resource type="Theme" uid="uid://blwc8jbdpr5ef" path="res://Gioco Finito/UI/Theme.tres" id="1_gl424"]
+[ext_resource type="Texture2D" uid="uid://chqi5k5y7ugwh" path="res://Gioco Finito/UI/image_2024-10-16_16-47-53.png" id="1_kuinv"]
+[ext_resource type="Texture2D" uid="uid://dpmfu0wv81m2v" path="res://Gioco Finito/UI/Default.png" id="1_xo3n1"]
+[ext_resource type="Texture2D" uid="uid://d1x1xr8ebfx8n" path="res://Gioco Finito/UI/Hover.png" id="2_cwoqw"]
+[ext_resource type="Script" path="res://Gioco Finito/UI/TextureButton.cs" id="3_j6ari"]
+[ext_resource type="Script" path="res://Gioco Finito/UI/Exit.cs" id="6_1nr87"]
+
+[node name="Start" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gl424")
+
+[node name="Sfondo" type="Sprite2D" parent="CanvasLayer/Control"]
+modulate = Color(0.641934, 0.641934, 0.641934, 1)
+position = Vector2(11, 113)
+scale = Vector2(1.24235, 1.24235)
+texture = ExtResource("1_kuinv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -131.5
+offset_right = 81.5
+offset_bottom = 131.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_xo3n1")
+texture_hover = ExtResource("2_cwoqw")
+script = ExtResource("3_j6ari")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -15.0
+offset_right = 72.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_xo3n1")
+texture_hover = ExtResource("2_cwoqw")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -15.0
+offset_right = 72.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_xo3n1")
+texture_hover = ExtResource("2_cwoqw")
+script = ExtResource("6_1nr87")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/Exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -15.0
+offset_right = 72.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Play" to="CanvasLayer/Control/VBoxContainer/Play" method="_on_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Exit" to="CanvasLayer/Control/VBoxContainer/Play" method="_on_exit_button_down"]
