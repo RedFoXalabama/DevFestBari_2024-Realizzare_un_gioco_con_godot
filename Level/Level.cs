@@ -6,10 +6,12 @@ public partial class Level : Node3D {
 	[Signal] public delegate void UpdateHUDEventHandler();
 	[Signal] public delegate void WinHUDEventHandler();
 
-	private Node mushroomContainer;
+	private Node3D mushroomContainer;
+	private AudioStreamPlayer3D eatSound;
 
 	public override void _Ready() {
-		mushroomContainer = GetNode("MushroomContainer");
+		mushroomContainer = GetNode<Node3D>("MushroomContainer");
+		eatSound = GetNode<AudioStreamPlayer3D>("EatSound");
 
 		foreach (Mushroom mushroom in mushroomContainer.GetChildren()) {
 			mushroom.Connect(Mushroom.SignalName.MushroomCollected, new Callable(this, nameof(Addpoint)));
@@ -24,6 +26,7 @@ public partial class Level : Node3D {
 
     public void Addpoint() {
 		EmitSignal(nameof(UpdateHUD));
+		eatSound.Play();
 	}
 
 }

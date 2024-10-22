@@ -7,6 +7,7 @@
 size = Vector3(1, 0.850647, 1)
 
 [node name="Mushroom5" instance=ExtResource("1_4njfk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Area3D" parent="." index="0"]
 collision_layer = 4
